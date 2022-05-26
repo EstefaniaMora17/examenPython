@@ -54,7 +54,7 @@ class Cliente:
         self.__ciudad = ciudad
 
     @numCuenta.setter
-    def numCuenra(self,numCuenra):
+    def numCuenta(self,numCuenra):
         self.__numCuenta = numCuenra
 
     @saldo.setter

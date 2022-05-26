@@ -1,3 +1,4 @@
+from Ciclista import Ciclista
 from Cliente import Cliente
 cliente = Cliente
 
@@ -17,34 +18,36 @@ clientes=[]
 while(opcion != 0):
     opcion=int(input("digite un numero: "))
     if(opcion == 1):
-        client={} 
-        cliente.__nombre = input("ingrese nombre: ")
-        cliente.__apellido = input("ingrese apellido: ")
-        cliente.__cedula = int(input("ingrese cedula: "))
-        cliente.__ciudad = input("ingrese ciudad: ")
-        cliente.__numCuenta = int(input("ingrese numero de cuenta: "))
-        cliente.__saldo = int(input("ingrese saldo: "))
+        cliente=Cliente() #crear el objeti de ckase Cliente
+        # cliente.nombre = input("ingrese nombre: ")
+        # cliente.apellido = input("ingrese apellido: ")
+        # cliente.cedula = int(input("ingrese cedula: "))
+        # cliente.ciudad = input("ingrese ciudad: ")
+        cliente.numCuenta = int(input("ingrese numero de cuenta: "))
+        cliente.saldo = int(input("ingrese saldo: "))
 
-        client['nombre'] =  cliente.__nombre 
-        client['apellido'] = cliente.__apellido
-        client['cedula'] = cliente.__cedula
-        client['ciudad'] = cliente.__ciudad
-        client['numCuenta'] =cliente.__numCuenta
-        client['saldo'] = cliente.__saldo
+      
 
-        clientes.append(client["saldo"])
+        clientes.append(cliente)
     elif(opcion == 2):
-        print(clientes)
+
+        for cliente in clientes:
+            print(f"su saldo es {cliente.saldo}")
+        
     elif(opcion == 3):
         ingresar = int(input("ingrese valor: "))
-        for i in clientes:
-           suma = i + ingresar
-        clientes = suma
+        suma = cliente.saldo + ingresar
+        cliente.saldo = suma
+        print(f"ingresaste {ingresar}")
     elif(opcion == 4):
         retirar = int(input("ingrese valor: "))
-        for e in clientes:
-           resta = e - retirar
-        clientes = resta
+        if(retirar <= cliente.saldo):
+            resta =   cliente.saldo - retirar 
+            cliente.saldo = resta
+            print(f"retiraste {retirar}")
+        else:
+            print("no tiene saldo sufiente ")
+        
     elif(opcion == 5):
         break
     else:   

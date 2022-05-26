@@ -4,27 +4,24 @@ ciclista = Ciclista
 respuestas = []
 
 contador = 1
-respuesta = {}
 
-while (contador <=3):
 
-    ciclista.__nombre = input("ingrese nombre: ")
-    ciclista.__edad = int(input("ingrese edad: "))
-    ciclista.__pais = input("ingrese pais: ")
-    ciclista.__tiempo = int(input("ingrese tiempo: "))
+while (contador <=2):
 
-    respuesta['nombre'] = ciclista.__nombre
-    respuesta['edad'] = ciclista.__edad
-    respuesta['pais'] = ciclista.__pais
-    respuesta['tiempo'] = ciclista.__tiempo
+    ciclista.nombre = input("ingrese nombre: ")
+    ciclista.edad = int(input("ingrese edad: "))
+    ciclista.pais = input("ingrese pais: ")
+    ciclista.tiempo = int(input("ingrese tiempo: "))
 
-    respuestas.append(respuesta)
+  
+
+    respuestas.append(ciclista)
     contador +=1
 
 tiempoMayor = 1000
 for index , value in enumerate(respuestas):
    
-   if(ciclista.__tiempo < tiempoMayor):
-       tiempoMayor = ciclista.__tiempo
-       print(respuesta)
+   if(ciclista.tiempo < tiempoMayor):
+       tiempoMayor = ciclista.tiempo
+       print(f"el menor tiempo menor es {tiempoMayor} ")
     
